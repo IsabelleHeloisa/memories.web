@@ -1,6 +1,7 @@
 import axios from '../axios-config'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import './Home.css'
 
 const Home = () => {
   const [memories, setMemories] = useState([])
@@ -18,7 +19,19 @@ const Home = () => {
     <div className="home">
       <h2>Confira as últimas Memórias</h2>
       <div className="memories-container">
-        {memories.length > 0 && memories.map(memory => <p>{memory.title}</p>)}
+        {memories.length > 0 &&
+          memories.map(memory => (
+            <div classname="memory" key={memory.id}>
+              <img
+                src={`${axios.defaults.baseURL}${memory.src}`}
+                alt={memory.title}
+              />
+              <p>{memory.title}</p>
+              <Link classname="btn" to={`/memories${memory._id}`}>
+                Comentar
+              </Link>
+            </div>
+          ))}
       </div>
     </div>
   )
