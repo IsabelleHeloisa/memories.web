@@ -2,6 +2,7 @@ import axios from '../axios-config'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import './Memory.css'
 
 const Memory = () => {
   const { id } = useParams()
