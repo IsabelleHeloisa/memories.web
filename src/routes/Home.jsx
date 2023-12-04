@@ -21,13 +21,13 @@ const Home = () => {
       <div className="memories-container">
         {memories.length > 0 &&
           memories.map(memory => (
-            <div classname="memory" key={memory.id}>
+            <div className="memory" key={memory.id}>
               <img
                 src={`${axios.defaults.baseURL}${memory.src}`}
                 alt={memory.title}
               />
               <p>{memory.title}</p>
-              <Link classname="btn" to={`/memories${memory._id}`}>
+              <Link className="btn" to={`/memories/${memory._id}`}>
                 Comentar
               </Link>
             </div>

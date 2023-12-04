@@ -5,14 +5,15 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './routes/Home'
 import AddMemory from './routes/AddMemory'
-
+import Memory from './routes/Memory'
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
     children: [
       { path: '/', element: <Home /> },
-      { path: '/add-memory', element: <AddMemory /> }
+      { path: '/add-memory', element: <AddMemory /> },
+      { path: '/memories/:id', element: <Memory /> }
     ]
   }
 ])
